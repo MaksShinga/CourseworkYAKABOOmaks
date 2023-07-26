@@ -8,11 +8,17 @@ Feature: Critical Path Scenario - Yakaboo
     When I searches for a book "Гаррі Поттер. Історія магії"
     And I selects the first search result
     Then I should see the product details page
-    And I click on "Buy now" button
+    And I click on To the basket button
+    And I should see that the book has been added to the basket
+    When I click on Basket button
+    Then I should see the basket page with added book
+    And I click on Go to checkout button
     Then I should be on the checkout page
-    And I fill in the required shipping and contact information
-    And I click on "Pay" button
+    And I fill in the required contact information
+    And I fill in the required delivery information
+    And I click on Pay button
     Then I go to the payment page
+    And I enter my card details
 
 
 
